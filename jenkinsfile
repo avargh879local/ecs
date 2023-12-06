@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checks out the code into the workspace
+                checkout scm
+            }
+        }
+
+        stage('Run Shell Command') {
+            steps {
+                // Executes a shell command
+                sh 'whoami'
+            }
+        }
+    }
+}
+
